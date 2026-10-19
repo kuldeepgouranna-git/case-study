@@ -1,0 +1,8 @@
+com\nimbus\reeferguard\model\SensorReading.class
+com\nimbus\reeferguard\service\AlertAnalysisService.class
+com\nimbus\reeferguard\config\AlertProperties.class
+com\nimbus\reeferguard\model\AlertEpisode.class
+com\nimbus\reeferguard\web\AlertController.class
+com\nimbus\reeferguard\service\SensorDataService.class
+com\nimbus\reeferguard\service\SimulationService.class
+com\nimbus\reeferguard\ReeferGuardApplication.class

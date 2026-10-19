@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: reeferguard-dynamic
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+reefer:
+  dataset: classpath:data/sensor_readings.json
+  alert:
+    threshold-c: 8.0
+    min-duration-minutes: 15
+    max-gap-minutes: 6
+    high-severity-c: 12.0
+    simulation-delay-ms: 700
