@@ -15,6 +15,10 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * REST controller for alert analysis and simulation endpoints.
+ * Provides endpoints to analyze sensor readings, manage simulation state, and update alerting rules.
+ */
 @RestController
 @RequestMapping("/api")
 @Validated

@@ -25,6 +25,12 @@ public class AlertAnalysisService {
         return analyze(data.loadReadings());
     }
 
+    /**
+     * Analyze a list of sensor readings and return a summary of alerts and statistics.
+     * 
+     * @param input - list of sensor readings to analyze
+     * @return map containing summary of alerts and statistics
+     */
     public Map<String, Object> analyze(List<SensorReading> input) {
         Map<String, List<SensorReading>> byTruck = input.stream()
                 .collect(Collectors.groupingBy(SensorReading::truckId, TreeMap::new, Collectors.toList()));
@@ -82,6 +88,12 @@ public class AlertAnalysisService {
         return response;
     }
 
+    /**
+     * Add an alert episode to the list if it meets the criteria for alerting.
+     * @param truck - the truck ID associated with the episode
+     * @param episode - the list of sensor readings that make up the episode
+     * @param alerts - the list of alert episodes to add to
+     */
     private void addIfAlertable(String truck, List<SensorReading> episode, List<AlertEpisode> alerts) {
         if (episode.isEmpty())
             return;

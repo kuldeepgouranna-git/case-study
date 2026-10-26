@@ -132,11 +132,11 @@ input:focus{border-color:#8ab1f5;background:white}
       </div>
       <div class="brand-copy">
         <div class="brand-name">Nimbus<span>Freight</span></div>
-        <div class="brand-sub">Reefer Guard · Cold-chain operations</div>
+        <div class="brand-sub"> Cold-chain operations</div>
       </div>
     </div>
     <div class="header-actions">
-      <span class="health" id="health"><span class="health-dot"></span><span id="healthText">Connecting to API</span></span>
+      
     </div>
   </header>
 
@@ -144,9 +144,7 @@ input:focus{border-color:#8ab1f5;background:white}
     <div>
       <div class="eyebrow">Operations overview</div>
       <h1>Cold-chain alert console</h1>
-      <p class="muted">Catch sustained temperature excursions early, suppress short-lived spikes, and keep sensor-data gaps visible.</p>
     </div>
-    <div class="updated"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Live local replay · Demo environment</span></div>
   </section>
 
   <section class="grid" aria-label="Fleet metrics">
@@ -195,7 +193,7 @@ input:focus{border-color:#8ab1f5;background:white}
     <aside class="side-stack">
       <section class="panel">
         <div class="panel-head"><div><h2>Detection policy</h2><div class="panel-sub">Tune rules for the next analysis run</div></div><span class="section-tag">Config</span></div>
-        <div class="policy-note">These are demo assumptions for the prototype, not validated cargo safety standards. Confirm thresholds with the cargo owner before production use.</div>
+        <div class="policy-note"> Safety standards </div>
         <form id="configForm">
           <div class="fields">
             <label>Threshold (°C)<input id="threshold" type="number" min="1" max="30" step="0.1" value="8" required></label>
@@ -208,18 +206,9 @@ input:focus{border-color:#8ab1f5;background:white}
         <div class="fleet-head"><h2>Fleet snapshot</h2><span class="section-tag">By truck</span></div>
         <div id="trucklist" class="trucklist"><div class="empty">Loading truck summaries…</div></div>
       </section>
-      <section class="panel">
-        <div class="panel-head"><div><h2>How detection works</h2><div class="panel-sub">Designed to reduce alert fatigue</div></div></div>
-        <div style="display:grid;gap:12px">
-          <div style="display:flex;gap:10px"><span class="metric-icon" style="flex:0 0 34px;width:34px;height:34px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4"/></svg></span><div><strong style="font-size:12px">Sustained excursion</strong><div class="muted" style="font-size:11px">Temperature must exceed the threshold for the configured duration.</div></div></div>
-          <div style="display:flex;gap:10px"><span class="metric-icon" style="flex:0 0 34px;width:34px;height:34px;background:#fff3dd;color:#9a5b04"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong style="font-size:12px">Brief spikes suppressed</strong><div class="muted" style="font-size:11px">Short excursions should not create repeated incidents.</div></div></div>
-          <div style="display:flex;gap:10px"><span class="metric-icon" style="flex:0 0 34px;width:34px;height:34px;background:#fff0ef;color:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM8 9h2m4 0h2M8 15h2m4 0h2"/></svg></span><div><strong style="font-size:12px">Gaps remain visible</strong><div class="muted" style="font-size:11px">Missing sensor data is surfaced instead of assumed safe.</div></div></div>
-        </div>
-        <div class="footer" style="display:block;padding-top:12px;margin-top:14px">Demo mode: local JSON replay and in-memory analysis. No external notifications are sent.</div>
-      </section>
     </aside>
   </div>
-  <footer class="footer"><span>© ReeferGuard · Spring Boot REST API</span><span><a href="/actuator/health">API health endpoint ↗</a></span></footer>
+  <footer class="footer"><span>© Nimbus Freight ·</span></footer>
 </main>
 
 <script>

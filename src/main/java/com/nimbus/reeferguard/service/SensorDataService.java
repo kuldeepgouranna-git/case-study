@@ -22,6 +22,11 @@ public class SensorDataService {
         this.dataset = dataset;
     }
 
+    /**
+     * Load sensor readings from the dataset
+     * 
+     * @return list of sensor readings
+     */
     public List<SensorReading> loadReadings() {
         try (InputStream in = dataset.getInputStream()) {
             JsonNode readings = mapper.readTree(in).path("readings");

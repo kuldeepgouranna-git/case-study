@@ -1,4 +1,4 @@
-# ReeferGuard Dynamic — Local Run Guide
+# Case Study — Local Run Guide
 
 A Java 21 + Spring Boot demo for the Nimbus Freight cold-chain alerting case study. It includes batch analysis, configurable rules, a replay mode, a responsive dashboard, REST endpoints, and Spring Boot Actuator.
 
@@ -7,7 +7,7 @@ A Java 21 + Spring Boot demo for the Nimbus Freight cold-chain alerting case stu
 - JDK 21 (verify with `java -version`)
 - Maven 3.9+ (verify with `mvn -version`)
 - Browser: Chrome, Edge, Firefox, or similar
-- Runs comfortably on a typical 16 GB RAM laptop; no database or Docker required
+- Runs comfortably on a local system; no database or Docker required
 
 ## Run
 
@@ -18,30 +18,30 @@ mvn clean test
 mvn spring-boot:run
 ```
 
-Open `http://localhost:8080`.
+Open `http://localhost:8082`.
 
 If Maven is not installed, install Maven 3.9+ and ensure `mvn` is on PATH. In IntelliJ IDEA, import the project as a Maven project, set Project SDK to Java 21, then run `ReeferGuardApplication`.
 
 ## Try the demo
 
-1. Open the dashboard at `http://localhost:8080`.
+1. Open the dashboard at `http://localhost:8082`.
 2. Click **Analyze full dataset** to inspect all readings at once.
 3. Click **Start replay** to process the supplied records incrementally; pause or reset the replay as needed.
 4. Change the threshold, minimum duration, or maximum gap under **Detection policy**, then apply the policy and analyze again.
 5. Inspect the incident evidence: truck, start/end time, duration, peak temperature, number of violating readings, and explanation.
-6. Check `http://localhost:8080/actuator/health` for the Spring Boot health endpoint.
+6. Check `http://localhost:8082/actuator/health` for the Spring Boot health endpoint.
 
 ## API examples
 
 ```bash
-curl http://localhost:8080/api/analysis
-curl http://localhost:8080/api/config
-curl -X POST http://localhost:8080/api/simulation/start
-curl http://localhost:8080/api/simulation
-curl -X POST http://localhost:8080/api/simulation/stop
-curl -X POST http://localhost:8080/api/simulation/reset
-curl -X PUT "http://localhost:8080/api/config?thresholdC=8.0&minDurationMinutes=15&maxGapMinutes=6"
-curl http://localhost:8080/actuator/health
+curl http://localhost:8082/api/analysis
+curl http://localhost:8082/api/config
+curl -X POST http://localhost:8082/api/simulation/start
+curl http://localhost:8082/api/simulation
+curl -X POST http://localhost:8082/api/simulation/stop
+curl -X POST http://localhost:8082/api/simulation/reset
+curl -X PUT "http://localhost:8082/api/config?thresholdC=8.0&minDurationMinutes=15&maxGapMinutes=6"
+curl http://localhost:8082/actuator/health
 ```
 
 ## Default policy
@@ -53,7 +53,6 @@ curl http://localhost:8080/actuator/health
 | Maximum gap inside an episode | 6 minutes |
 | High-severity peak | 12°C or higher |
 
-These are demo assumptions only. Confirm actual temperature limits and exposure durations with the customer and cargo-specific SOPs before operational use.
 
 ## Dataset notes
 
